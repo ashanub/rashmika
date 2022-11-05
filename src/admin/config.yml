@@ -17,7 +17,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Short Description", name: "excerpt", widget: "text"}
       - {label: "Long Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
       - label: "Showcase"
         name: "showcase"
         widget: "object"
