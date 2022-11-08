@@ -1,21 +1,96 @@
 <template>
-  <Layout>
+  <!-- <Layout> -->
+  <div class="home">
+    <div id="loader"></div>
+    <section class="home-container">
+      <!-- Background -->
+      <div class="outer-page personal">
+        <div class="inner-page personal">
+          <div class="decor"></div>
+        </div>
+      </div>
 
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
+      <!-- logo -->
+      <div class="logo animated fadeInDown">
+        <g-link class="nav__link" to="/">Logo</g-link>
+      </div>
 
-    <h1>Hello, world!</h1>
+      <!-- logo mobile -->
+      <div class="m-logo animated fadeInDown">
+        <a href="#"><img src="img/mobile-logo.png" alt="m-logo"/></a>
+      </div>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
+      <!-- mobile navbar -->
+      <a class="m-navbar-left animated fadeInDown" href="about.html">
+        <span>ABOUT US</span>
+      </a>
+      <a class="m-navbar-right animated fadeInDown" href="work.html">
+        <span>PORTFOLIO</span>
+      </a>
 
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
+      <!-- Title -->
+      <div class="table">
+        <div class="valign">
+          <div class="title-personal">
+            <p>Hello, iam</p>
+            <h1>Anya</h1>
+            <p>
+              UI/UX DESIGNER from Indonesia living in New York, my
+              strength lies in website and app design.
+            </p>
+            <div class="mt-30">
+              <a href="work.html" class="btn-link">MY WORKS</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  </Layout>
+      <!-- Social Media -->
+      <div class="social">
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-behance"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-medium"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Copyright -->
+      <div class="copyright">
+        <p>&copy; Cingunt-themes 2018</p>
+      </div>
+    </section>
+
+    <!-- Menu Toggle -->
+    <div class="button_container" id="toggle">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <nav class="overlay-menu">
+        <ul>
+            <li><g-link class="nav__link" to="/">Home</g-link></li>
+            <li><g-link class="nav__link" to="/about">About</g-link></li>
+            <li><g-link class="nav__link" to="/portfolio">Work</g-link></li>
+          </ul>
+      </nav>
+    </div>
+
+    <!-- Custom cursor -->
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+  </div>
+  <!-- </Layout> -->
 </template>
 
 <page-query>
@@ -23,15 +98,24 @@
   </page-query>
 
 <script>
+// import '../js/jquery-3.3.1.min.js'
+// import '../js/plugin.js'
+// import '../js/custom.js'
 export default {
   metaInfo: {
-    title: 'Hello, world!'
-  }
-}
+    title: 'Rashmika - Portfolio',
+  },
+  mounted() {
+    const custom = document.createElement('script');
+    custom.setAttribute('src', '../js/custom.js');
+    custom.async = true;
+    document.head.appendChild(custom);
+  },
+};
 </script>
 
 <style>
-.home-links a {
-  margin-right: 1rem;
-}
+@import '../css/plugin.css';
+@import '../css/style.css';
+@import '../css/responsive.css';
 </style>
