@@ -18,6 +18,15 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'page_content/**/*.md',
+        typeName: 'PageContent',
+        remark: {}
+      }
+    }
+    ,
+    {
       use: `gridsome-plugin-netlify-cms`,
       options: {
         publicPath: `/admin`
