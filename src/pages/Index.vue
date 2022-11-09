@@ -4,20 +4,20 @@
     <div id="loader"></div>
     <section class="home-container">
       <!-- Background -->
-      <div class="outer-page personal">
+      <div class="outer-page personal" :style="{ 'background-image': 'url(' + bg_img + ')' }">
         <div class="inner-page personal">
           <div class="decor"></div>
         </div>
       </div>
 
       <!-- logo -->
-      <div class="logo animated fadeInDown">
+      <div class="logo animated fadeInDown" :style="{ 'background-image': 'url(' + logoMain + ')' }">
         <g-link class="nav__link" to="/">Logo</g-link>
       </div>
 
       <!-- logo mobile -->
       <div class="m-logo animated fadeInDown">
-        <a href="#"><img src="img/mobile-logo.png" alt="m-logo"/></a>
+        <a href="#"><img :src="logoMain" alt="m-logo"/></a>
       </div>
 
       <!-- mobile navbar -->
@@ -33,13 +33,12 @@
         <div class="valign">
           <div class="title-personal">
             <p>Hello, iam</p>
-            <h1>Anya</h1>
-            <p>
-              UI/UX DESIGNER from Indonesia living in New York, my
-              strength lies in website and app design.
+            <h1>{{name}}</h1>
+            <p class="title-description">
+              {{intro}}
             </p>
             <div class="mt-30">
-              <a href="work.html" class="btn-link">MY WORKS</a>
+              <g-link class="btn-link" to="/portfolio">MY WORK</g-link>
             </div>
           </div>
         </div>
@@ -63,10 +62,6 @@
         </ul>
       </div>
 
-      <!-- Copyright -->
-      <div class="copyright">
-        <p>&copy; Cingunt-themes 2018</p>
-      </div>
     </section>
 
     <!-- Menu Toggle -->
@@ -95,15 +90,23 @@
 
 <page-query>
 
-  </page-query>
+</page-query>
 
 <script>
-// import '../js/jquery-3.3.1.min.js'
-// import '../js/plugin.js'
-// import '../js/custom.js'
+import home from "../../content/pages/home.json"
+import logo from "../../content/pages/logo.json"
 export default {
   metaInfo: {
     title: 'Rashmika - Portfolio',
+  },
+  data(){
+    return{
+      name: home.name,
+      intro: home.intro,
+      bg_img: home.bg_img,
+      logoMain: logo.logo_main,
+      logoMobile: logo.logo_mobile
+    }
   },
   mounted() {
     const custom = document.createElement('script');

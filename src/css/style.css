@@ -436,7 +436,7 @@ h1 {
 	background-color: #111111;
 }
 .outer-page.\personal{
-	background-image: url('../img/homr-bg-personal.jpg') !important;
+	/* background-image: url('../img/homr-bg-personal.jpg') !important; */
 	background-size: cover;
 	background-position: 60% bottom;
 }
@@ -595,7 +595,7 @@ h1 {
     top: 4%;
     width: 150px;
     height: 30px;
-    background: url('../img/logo.png');
+    /* background: url('../img/logo.png'); */
 	left: 5%;
     z-index: 99;
     letter-spacing: 26px;
@@ -615,8 +615,11 @@ h1 {
 	z-index: 5;
 }
 .title-personal {
-	width: 450px;
+	min-width: 450px;
 	margin-left: 15%;
+}
+.title-description{
+	max-width: 450px;
 }
 .title-personal h1{
 	font-size: 90px;
