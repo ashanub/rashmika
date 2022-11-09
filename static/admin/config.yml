@@ -107,7 +107,7 @@ collections:
         editor:
           preview: false
         fields:
-          - { label: 'Top Description', name: 'top_desc', widget: 'markdown' }
+          - { label: 'Top Description', name: 'top_desc', widget: 'text' }
           - label: 'Background Image'
             name: 'bg_img'
             widget: 'image'
