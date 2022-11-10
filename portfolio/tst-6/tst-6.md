@@ -4,11 +4,11 @@ short_description: gergegwe gw egwegwe
 long_description: rg ewrg werg wergerwger
 showcase:
   add_to_showcase: true
-  bg_img: 50-1920x1080.jpg
-  float_img: obj-2.png
+  bg_img: /uploads/tst-6/50-1920x1080.jpg
+  float_img: /uploads/tst-6/obj-6.png
 youtube: "null"
 gallery:
   images:
-    - thumbnail: 50-1920x1080.jpg
-      big_img: 50-1920x1080.jpg
+    - thumbnail: /uploads/tst-6/50-1920x1080.jpg
+      big_img: /uploads/tst-6/50-1920x1080.jpg
 ---
