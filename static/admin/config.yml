@@ -12,6 +12,8 @@ collections:
     create: true
     slug: '{{slug}}'
     path: '{{title}}/{{slug}}'
+    media_folder: 'static/uploads/{{slug}}'
+    public_folder: '/uploads/{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Short Description', name: 'short_description', widget: 'text'}

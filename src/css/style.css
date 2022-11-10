@@ -1085,7 +1085,7 @@ ul.prev-nex-btn {
 ========================================== */
 
   .about .main-detail-bg {
-	background: url('../img/about/bg.png') no-repeat center center;
+	/* background: url('../img/about/bg.png') no-repeat center center; */
 	background-color: #111111;
   }
 

@@ -9,46 +9,13 @@
         <div class="valign">
           <a
             class="item-menu active"
-            data-menuanchor="firstPage"
-            href="#firstPage"
+            :data-menuanchor="pageAnchors[index]"
+            :href="pageLinks[index]"
+            v-for="(edge, index) in $page.portfolios.edges"
+            :key="edge.node.id"
           >
-            <span class="text">Nat-nat</span></a
+            <span class="text">{{ edge.node.title }}</span></a
           >
-          <a
-            class="item-menu"
-            data-menuanchor="secondPage"
-            href="#secondPage"
-          >
-            <span class="text">Genesis</span>
-          </a>
-          <a
-            class="item-menu"
-            data-menuanchor="thirdPage"
-            href="#thirdPage"
-          >
-            <span class="text">Angsa</span>
-          </a>
-          <a
-            class="item-menu"
-            data-menuanchor="fourthPage"
-            href="#fourthPage"
-          >
-            <span class="text">Marmoset</span>
-          </a>
-          <a
-            class="item-menu"
-            data-menuanchor="fifthPage"
-            href="#fifthPage"
-          >
-            <span class="text">Senja</span>
-          </a>
-          <a
-            class="item-menu"
-            data-menuanchor="sixthPage"
-            href="#sixthPage"
-          >
-            <span class="text">Nellax</span>
-          </a>
         </div>
       </div>
     </nav>
@@ -56,12 +23,23 @@
     <!-- Work List -->
     <div class="pagepiling">
       <!-- Work 01 -->
-      <div class="section work-1">
+      <div
+        :class="'section work-' + (index + 1)"
+        v-for="(edge, index) in $page.portfolios.edges"
+        :key="edge.node.id"
+      >
         <div class="layer">
           <!-- background -->
-          <div class="prx bg-work-1" id="--1">
+          <div
+            :class="'prx bg-work-' + (index + 1)"
+            :id="'--' + (index + 1)"
+            :style="{ 'background-image': 'url(' +edge.node.path + edge.node.showcase.bg_img + ')' }"
+          >
             <!-- Work Image -->
-            <div class="img-obj-1" data-depth="0.20"></div>
+            <div
+              :class="'img-obj-' + (index + 1)"
+              data-depth="0.20"
+            ></div>
           </div>
         </div>
         <div class="container">
@@ -69,126 +47,9 @@
             <div class="col-md-8">
               <div class="title-work animated fadeInUp delay-0.5s">
                 <a href="work-detail.html">
-                  <h3 id="zoom-fade">Nat-nat</h3>
+                  <h3 id="zoom-fade">{{ edge.node.title }}</h3>
                   <p class="sub">
-                    Web Development, Branding, UI, UX Desgn
-                  </p>
-                  <h4 class="btn-detail">Work detail</h4></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Work 02 -->
-      <div class="section work-2">
-        <div class="layer">
-          <!-- background -->
-          <div class="prx bg-work-2" id="--2" data-depth="0.10">
-            <!-- work image -->
-            <div class="img-obj-2" data-depth="0.20"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="title-work animated fadeInUp delay-0.5s">
-                <a href="work-detail.html">
-                  <h3 id="zoom-fade">Genesis</h3>
-                  <p class="sub">
-                    Web Development, Branding, UI, UX Desgn
-                  </p>
-                  <h4 class="btn-detail">Work detail</h4></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section work-3">
-        <div class="layer">
-          <div class="prx bg-work-3" id="--3">
-            <div class="img-obj-3" data-depth="0.20"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="title-work animated fadeInUp delay-0.5s">
-                <a href="work-detail.html">
-                  <h3 id="zoom-fade">Angsa</h3>
-                  <p class="sub">
-                    Web Development, Branding, UI, UX Desgn
-                  </p>
-                  <h4 class="btn-detail">Work detail</h4></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section work-4">
-        <div class="layer">
-          <div class="prx bg-work-4" id="--4">
-            <div class="img-obj-4" data-depth="0.20"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="title-work animated fadeInUp delay-0.5s">
-                <a href="work-detail.html">
-                  <h3 id="zoom-fade">Marmoset</h3>
-                  <p class="sub">
-                    Web Development, Branding, UI, UX Desgn
-                  </p>
-                  <h4 class="btn-detail">Work detail</h4></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section work-5">
-        <div class="layer">
-          <div class="prx bg-work-5" id="--5">
-            <div class="img-obj-5" data-depth="0.20"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="title-work animated fadeInUp delay-0.5s">
-                <a href="work-detail.html">
-                  <h3 id="zoom-fade">Senja</h3>
-                  <p class="sub">
-                    Web Development, Branding, UI, UX Desgn
-                  </p>
-                  <h4 class="btn-detail">Work detail</h4></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section work-6">
-        <div class="layer">
-          <div class="prx bg-work-6" id="--6">
-            <div class="img-obj-6" data-depth="0.20"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="title-work animated fadeInUp delay-0.5s">
-                <a href="work-detail.html">
-                  <h3 id="zoom-fade">Nellax</h3>
-                  <p class="sub">
-                    Web Development, Branding, UI, UX Desgn
+                    {{edge.node.short_description}}
                   </p>
                   <h4 class="btn-detail">Work detail</h4></a
                 >
@@ -201,7 +62,7 @@
 
     <!-- logo -->
     <div class="logo animated fadeInDown">
-        <g-link class="nav__link" to="/">Logo</g-link>
+      <g-link class="nav__link" to="/">Logo</g-link>
     </div>
 
     <!-- logo mobile -->
@@ -264,11 +125,51 @@
   </div>
   <!-- </Layout> -->
 </template>
+<page-query>
+  query{
+    portfolios: allPortfolio{
+      edges{
+        node{
+          id
+          title
+          path
+          short_description
+          long_description
+          showcase{
+            add_to_showcase
+            bg_img
+            float_img
+          }
+        }
+      }
+    }
+  }
+</page-query>
 
 <script>
 export default {
   metaInfo: {
     title: 'About us',
+  },
+  data() {
+    return {
+      pageLinks: [
+        '#firstPage',
+        '#secondPage',
+        '#thirdPage',
+        '#fourhtPage',
+        '#fifthPage',
+        '#sixthPage',
+      ],
+      pageAnchors: [
+        'firstPage',
+        'secondPage',
+        'thirdPage',
+        'fourhtPage',
+        'fifthPage',
+        'sixthPage',
+      ],
+    };
   },
   mounted() {
     const custom = document.createElement('script');

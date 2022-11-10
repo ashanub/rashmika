@@ -4,7 +4,7 @@
     <div id="loader"></div>
 
     <!-- main-background -->
-    <div class="main-detail-bg">
+    <div class="main-detail-bg" :style="{ 'background-image': 'url(' + bgImg + ')' }">
       <!-- mouse animation -->
       <a href="#">
         <div id="mouse-scroll">
@@ -116,7 +116,7 @@
                 Ready to inject style into your next project ?
               </h2>
               <a id="zoom-fade" href="mailto:mailr@example.com"
-                >HELLO@EMBUN.CO</a
+                >{{email}}</a
               >
             </div>
           </div>
@@ -130,13 +130,13 @@
             <div class="col-md-4 mt-30">
               <i class="fas fa-envelope"></i>
               <h4>Say Hello</h4>
-              <p>example@mail.com</p>
+              <p>{{email}}</p>
             </div>
             <div class="col-md-4 mt-30">
               <div class="address">
                 <i class="fas fa-phone"></i>
                 <h4>Telephone</h4>
-                <p>+20 ( 432 ) 3476 3479</p>
+                <p>{{phone}}</p>
               </div>
             </div>
             <div class="col-md-4 mt-30">
@@ -144,8 +144,7 @@
                 <i class="fas fa-map-marker"></i>
                 <h4>Address</h4>
                 <p>
-                  75 New York - Bourbon Street 10/555 Klaten - Central
-                  Java
+                  {{address}}
                 </p>
               </div>
             </div>
