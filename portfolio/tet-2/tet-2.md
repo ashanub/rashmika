@@ -4,11 +4,11 @@ short_description: tyegferge
 long_description: ergewgregerg
 showcase:
   add_to_showcase: true
-  bg_img: 665-1920x1080.jpg
-  float_img: obj-1.png
+  bg_img: ../../uploads/tet-2/450-1920x1080.jpg
+  float_img: ../../uploads/tet-2/obj-5.png
 youtube: "null"
 gallery:
   images:
-    - thumbnail: 665-1920x1080.jpg
-      big_img: 665-1920x1080.jpg
+    - thumbnail: ../../uploads/tet-2/450-1920x1080.jpg
+      big_img: ../../uploads/tet-2/450-1920x1080.jpg
 ---
