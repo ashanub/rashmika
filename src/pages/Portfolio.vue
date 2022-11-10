@@ -33,7 +33,7 @@
           <div
             :class="'prx bg-work-' + (index + 1)"
             :id="'--' + (index + 1)"
-            :style="{ 'background-image': 'url(' +edge.node.path + edge.node.showcase.bg_img + ')' }"
+            :style="{ 'background-image': 'url('+ edge.node.showcase.bg_img +')' }"
           >
             <!-- Work Image -->
             <div
@@ -47,7 +47,7 @@
             <div class="col-md-8">
               <div class="title-work animated fadeInUp delay-0.5s">
                 <a href="work-detail.html">
-                  <h3 id="zoom-fade">{{ edge.node.title }}</h3>
+                  <h3 id="zoom-fade">{{ edge.node.title }} {{convertToText(edge.node.showcase.bg_img)}}</h3>
                   <p class="sub">
                     {{edge.node.short_description}}
                   </p>
@@ -170,6 +170,11 @@ export default {
         'sixthPage',
       ],
     };
+  },
+  methods: {
+    convertToText: function (path){
+      return path.toString()
+    }
   },
   mounted() {
     const custom = document.createElement('script');
