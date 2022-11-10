@@ -178,6 +178,8 @@ export default {
     custom.setAttribute('src', '../js/work.js');
     custom.async = true;
     document.head.appendChild(custom);
+
+    console.log(this.$page)
   },
 };
 </script>
