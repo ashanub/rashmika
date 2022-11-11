@@ -3,16 +3,14 @@ backend:
   branch: main # Branch to update (optional; defaults to master)s
 
 media_folder: "static/uploads"
-public_folder: "/uploads"
+public_folder: "uploads"
 
 collections:
   - name: 'portfolio'
     label: 'Portfolio'
-    folder: 'portfolio'
+    folder: 'content/portfolio'
     create: true
     slug: '{{slug}}'
-    media_folder: 'uploads/'
-    public_folder: 'static/uploads/'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Short Description', name: 'short_description', widget: 'text'}
