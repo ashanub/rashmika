@@ -34,6 +34,7 @@ collections:
             widget: 'image'
             choose_url: true
             required: false
+            default: 'static/uploads/default.png'
             media_library:
               config:
                 multiple: false
