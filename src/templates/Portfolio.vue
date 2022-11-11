@@ -159,24 +159,26 @@ export default {
     }
   </page-query>
 
-<style scoped lang="scss">
+<style scoped>
 @import '../css/plugin.css';
 @import '../css/style.css';
 @import '../css/responsive.css';
 
 .gallery-wrap {
   margin-top: 30px;
-  .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    a {
-      max-width: 50%;
-      padding: 1em;
+}
 
-      &:hover{
-        padding: 0;
-      }
-    }
-  }
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-container > a {
+  max-width: 50%;
+  padding: 1em;
+}
+
+a:hover {
+  padding: 0;
 }
 </style>
