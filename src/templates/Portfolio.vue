@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="title-work-detail">
-                <h2>Nat-nat</h2>
+                <h2>{{$page.portfolio.title}}</h2>
                 <p class="project">
                   Website Development, UI UX, Branding, Responsive
                   Site, Mobile App & System Development
@@ -156,13 +156,9 @@ export default {
     title: 'hd'
   },
   mounted() {
-    const plugin = document.createElement('script');
     const custom = document.createElement('script');
-    plugin.setAttribute('src', '../../../js/plugin.js');
     custom.setAttribute('src', '../../../js/custom.js');
-    plugin.async = true;
     custom.async = true;
-    document.head.appendChild(plugin);
     document.head.appendChild(custom);
   },
 };

@@ -13,6 +13,7 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'string' }
       - { label: 'Short Description', name: 'short_description', widget: 'text'}
       - { label: 'Long Description', name: 'long_description', widget: 'text'}
       - label: "Showcase"
