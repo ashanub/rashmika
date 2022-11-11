@@ -12,4 +12,6 @@ gallery:
   images:
     - thumbnail: uploads/0266554465.jpeg
       big_img: uploads/0266554465.jpeg
+    - thumbnail: uploads/1.jpg
+      big_img: uploads/1.jpg
 ---
