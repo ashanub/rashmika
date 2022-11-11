@@ -4,7 +4,13 @@
     <div id="loader"></div>
 
     <!-- main-background -->
-    <div class="main-detail-bg">
+    <div
+      class="main-detail-bg"
+      :style="{
+        'background-image':
+          'url(../' + $page.portfolio.showcase.bg_img + ')',
+      }"
+    >
       <!-- mouse animation -->
       <a href="#">
         <div id="mouse-scroll">
@@ -26,18 +32,13 @@
           <div class="row">
             <div class="col-md-6">
               <div class="title-work-detail">
-                <h2>{{$page.portfolio.title}}</h2>
+                <h2>{{ $page.portfolio.title }}</h2>
                 <p class="project">
-                  Website Development, UI UX, Branding, Responsive
-                  Site, Mobile App & System Development
+                  {{ $page.portfolio.tags }}
                 </p>
                 <div class="dash"></div>
                 <p>
-                  Nat-nat is a simulated mission made of 8 motion
-                  graphic interstitials and 7 WebGL games, each
-                  testing the user on a range of STEM skills that are
-                  required for the U.S. Army’s most unique career
-                  opportunities.
+                  {{ $page.portfolio.short_description }}
                 </p>
               </div>
             </div>
@@ -52,84 +53,53 @@
         <div class="row">
           <div class="col-md-8 offset-md-2 text-center">
             <div class="web-detail">
-              <h3>Websites</h3>
+              <h3>{{ $page.portfolio.title }}</h3>
               <p
                 class="m-each"
                 data-aos-once="true"
                 data-aos="fade-up"
               >
-                Nat-nat website was also developed by us. We focused
-                on improving and optimizing the navigation, making it
-                more intuitive and functional, highlighting videos and
-                attractive images of the complex, creating a
-                differentiated and pleasant experience.
+                {{ $page.portfolio.long_description }}
               </p>
 
               <div
                 class="image-work"
                 data-aos-once="true"
                 data-aos="fade-up"
+                v-if="$page.portfolio.youtube !== 'null'"
               >
-                <img
-                  class="img-fluid"
-                  src="img/work-detail/1.png"
-                  alt="3"
-                />
+                <iframe
+                  width="560"
+                  height="315"
+                  :src="$page.portfolio.youtube"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </div>
 
               <div
-                class="m-each"
                 data-aos-once="true"
                 data-aos="fade-up"
+                class="gallery-wrap"
               >
-                <a href="#" class="btn-link">launch Website</a>
-              </div>
-
-              <div data-aos-once="true" data-aos="fade-up">
-                <img
-                  class="img-fluid"
-                  src="img/work-detail/2.jpg"
-                  alt="2"
-                />
-              </div>
-
-              <p class="m-each">
-                Nat-nat website was also developed by us. We focused
-                on improving and optimizing the navigation, making it
-                more intuitive and functional, highlighting videos and
-                attractive images of the complex, creating a
-                differentiated and pleasant experience.
-              </p>
-
-              <div
-                class="image-work"
-                data-aos-once="true"
-                data-aos="fade-up"
-              >
-                <img
-                  class="img-fluid"
-                  src="img/work-detail/3.jpg"
-                  alt="2"
-                />
-              </div>
-
-              <div
-                class="image-work"
-                data-aos-once="true"
-                data-aos="fade-up"
-              >
-                <img
-                  class="img-fluid"
-                  src="img/work-detail/4.jpg"
-                  alt="2"
-                />
+                <h3>Gallery</h3>
+                <div class="image-container">
+                  <g-link
+                    :to="'../' + image.big_img"
+                    target="_blank"
+                    v-for="image in $page.portfolio.gallery.images"
+                  >
+                    <img
+                      class="img-fluid"
+                      :src="'../' + image.thumbnail"
+                      alt="2"
+                    />
+                  </g-link>
+                </div>
               </div>
             </div>
-            <!-- Navigation Bottom -->
-            <ul class="prev-nex-btn">
-              <li><a href="work-detail.html">Previous Project</a></li>
-              <li><a href="work-detail.html">Next Project</a></li>
-            </ul>
           </div>
         </div>
       </div>
@@ -139,7 +109,9 @@
     <div class="btn-back">
       <g-link class="txt" to="/portfolio">Back to works </g-link>
       <span>
-        <a href=""><img src="../img/work-detail/back.png" alt="hh"/></a>
+        <a href=""
+          ><img src="../img/work-detail/back.png" alt="hh"
+        /></a>
       </span>
     </div>
 
@@ -153,13 +125,15 @@
 <script>
 export default {
   metaInfo: {
-    title: 'hd'
+    title: 'hd',
   },
   mounted() {
     const custom = document.createElement('script');
     custom.setAttribute('src', '../../../js/custom.js');
     custom.async = true;
     document.head.appendChild(custom);
+
+    console.log(this.$page.portfolio.gallery.images);
   },
 };
 </script>
@@ -168,12 +142,41 @@ export default {
     query Postfolio ($id: ID!) {
         portfolio: portfolio (id: $id) {
             title
+            tags
+            short_description
+            long_description
+            showcase{
+                bg_img
+            }
+            youtube
+            gallery{
+                images{
+                    thumbnail
+                    big_img
+                }
+            }
         }
     }
   </page-query>
 
-<style>
+<style scoped lang="scss">
 @import '../css/plugin.css';
 @import '../css/style.css';
 @import '../css/responsive.css';
+
+.gallery-wrap {
+  margin-top: 30px;
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      max-width: 50%;
+      padding: 1em;
+
+      &:hover{
+        padding: 0;
+      }
+    }
+  }
+}
 </style>
