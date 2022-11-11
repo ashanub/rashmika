@@ -47,7 +47,7 @@
             <div class="col-md-8">
               <div class="title-work animated fadeInUp delay-0.5s">
                 <a href="work-detail.html">
-                  <h3 id="zoom-fade">{{ edge.node.title }} {{edge.node.showcase.bg_img}}</h3>
+                  <h3 id="zoom-fade">{{ edge.node.title }}</h3>
                   <p class="sub">
                     {{edge.node.short_description}}
                   </p>
