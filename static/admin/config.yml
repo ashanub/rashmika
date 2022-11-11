@@ -49,7 +49,7 @@ collections:
               - label: 'Thumbnail'
                 name: 'thumbnail'
                 widget: 'image'
-                default: '../uploads/default.png'
+                default: '/uploads/default.png'
                 choose_url: true
                 required: false
                 media_library:
@@ -58,7 +58,7 @@ collections:
               - label: "Big Image"
                 name: "big_img"
                 widget: 'image'
-                default: '../uploads/default.png'
+                default: '/uploads/default.png'
                 choose_url: true
                 required: false
                 media_library:
