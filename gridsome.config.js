@@ -8,6 +8,10 @@ module.exports = {
     }
   },
 
+  templates: {
+    Portfolio: '/:title'
+  },
+
   plugins: [
     {
       use: '@gridsome/source-filesystem',

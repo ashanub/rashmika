@@ -46,12 +46,12 @@
           <div class="row">
             <div class="col-md-8">
               <div class="title-work animated fadeInUp delay-0.5s">
-                <a href="work-detail.html">
+                <g-link :to="edge.node.path">
                   <h3 id="zoom-fade">{{ edge.node.title }}</h3>
                   <p class="sub">
                     {{edge.node.short_description}}
                   </p>
-                  <h4 class="btn-detail">Work detail</h4></a
+                  <h4 class="btn-detail">Work detail</h4></g-link
                 >
               </div>
             </div>
@@ -149,7 +149,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'About us',
+    title: 'My Work',
   },
   data() {
     return {
@@ -157,7 +157,7 @@ export default {
         '#firstPage',
         '#secondPage',
         '#thirdPage',
-        '#fourhtPage',
+        '#fourthPage',
         '#fifthPage',
         '#sixthPage',
       ],
@@ -165,7 +165,7 @@ export default {
         'firstPage',
         'secondPage',
         'thirdPage',
-        'fourhtPage',
+        'fourthPage',
         'fifthPage',
         'sixthPage',
       ],
