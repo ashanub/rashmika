@@ -51,7 +51,6 @@ collections:
                 widget: 'image'
                 default: '/uploads/default.png'
                 choose_url: true
-                required: false
                 media_library:
                   config:
                     multiple: false
@@ -60,7 +59,6 @@ collections:
                 widget: 'image'
                 default: '/uploads/default.png'
                 choose_url: true
-                required: false
                 media_library:
                   config:
                     multiple: false
