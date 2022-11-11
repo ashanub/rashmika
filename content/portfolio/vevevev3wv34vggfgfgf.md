@@ -7,7 +7,7 @@ showcase:
   add_to_showcase: true
   bg_img: uploads/5.jpg
   float_img: uploads/obj-6.png
-youtube: "null"
+youtube: https://www.youtube.com/embed/4n1GYYnFJio
 gallery:
   images:
     - thumbnail: uploads/0266554465.jpeg
